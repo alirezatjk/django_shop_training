@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-import re
 
 import jwt
 from django.conf import settings
@@ -84,3 +83,4 @@ class User(AbstractBaseUser, PermissionsMixin):
         token = jwt.encode(token_body, settings.SECRET_KEY, algorithm='HS256')
 
         return token.decode('utf-8')
+
